@@ -1,11 +1,11 @@
 # go-multierror
 
 [![CircleCI](https://img.shields.io/circleci/build/github/hashicorp/go-multierror/master)](https://circleci.com/gh/hashicorp/go-multierror)
-[![Go Reference](https://pkg.go.dev/badge/github.com/hashicorp/go-multierror.svg)](https://pkg.go.dev/github.com/hashicorp/go-multierror)
+[![Go Reference](https://pkg.go.dev/badge/github.com/keuin/go-multierror.svg)](https://pkg.go.dev/github.com/keuin/go-multierror)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/hashicorp/go-multierror)
 
 [circleci]: https://app.circleci.com/pipelines/github/hashicorp/go-multierror
-[godocs]: https://pkg.go.dev/github.com/hashicorp/go-multierror
+[godocs]: https://pkg.go.dev/github.com/keuin/go-multierror
 
 `go-multierror` is a package for Go that provides a mechanism for
 representing a list of `error` values as a single `error`.
@@ -22,10 +22,10 @@ for introspecting on error values.
 
 ## Installation and Docs
 
-Install using `go get github.com/hashicorp/go-multierror`.
+Install using `go get github.com/keuin/go-multierror`.
 
 Full documentation is available at
-https://pkg.go.dev/github.com/hashicorp/go-multierror
+https://pkg.go.dev/github.com/keuin/go-multierror
 
 ### Requires go version 1.13 or newer
 
@@ -34,15 +34,15 @@ https://pkg.go.dev/github.com/hashicorp/go-multierror
 this library takes advantage of.
 
 If you need to use an earlier version of go, you can use the
-[v1.0.0](https://github.com/hashicorp/go-multierror/tree/v1.0.0)
+[v1.0.0](https://github.com/keuin/go-multierror/tree/v1.0.0)
 tag, which doesn't rely on features in go 1.13.
 
 If you see compile errors that look like the below, it's likely that
 you're on an older version of go:
 
 ```
-/go/src/github.com/hashicorp/go-multierror/multierror.go:112:9: undefined: errors.As
-/go/src/github.com/hashicorp/go-multierror/multierror.go:117:9: undefined: errors.Is
+/go/src/github.com/keuin/go-multierror/multierror.go:112:9: undefined: errors.As
+/go/src/github.com/keuin/go-multierror/multierror.go:117:9: undefined: errors.Is
 ```
 
 ## Usage
