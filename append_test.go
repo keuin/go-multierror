@@ -2,6 +2,7 @@ package multierror
 
 import (
 	"errors"
+	"fmt"
 	"testing"
 )
 
@@ -78,5 +79,30 @@ func TestAppend_NonError_Error(t *testing.T) {
 	result := Append(original, Append(nil, errors.New("bar")))
 	if len(result.Errors) != 2 {
 		t.Fatalf("wrong len: %d", len(result.Errors))
+	}
+}
+
+func TestAppend_Errorf(t *testing.T) {
+	var (
+		A = errors.New("A")
+		B = errors.New("B")
+		E error
+	)
+	E = Append(
+		Prefix(A, "some prefix"),
+		fmt.Errorf("this is %w", B),
+	)
+	if !errors.Is(E, A) {
+		t.Fatal("E is not A: ", E)
+	}
+	if !errors.Is(E, B) {
+		t.Fatal("E is not B: ", B)
+	}
+	E = fmt.Errorf("error occurred: %w", E)
+	if !errors.Is(E, A) {
+		t.Fatal("E is not A: ", E)
+	}
+	if !errors.Is(E, B) {
+		t.Fatal("E is not B: ", B)
 	}
 }
